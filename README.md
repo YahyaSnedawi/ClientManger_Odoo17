@@ -1,0 +1,1 @@
+# ClientManger_Odoo17
