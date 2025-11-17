@@ -1,0 +1,11 @@
+<odoo>
+    <!-- User Group for Sales Manager -->
+    <record id="group_sales_manager" model="res.groups">
+        <field name="name">Sales Manager</field>
+    </record>
+
+    <!-- User Group for Sales Employee -->
+    <record id="group_sales_employee" model="res.groups">
+        <field name="name">Sales Employee</field>
+    </record>
+</odoo>

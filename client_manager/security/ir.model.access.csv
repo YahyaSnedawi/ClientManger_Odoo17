@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_client_manager","Access Client Manager","model_client_client","base.group_user",1,1,1,1
+"access_interaction_manager","Access Interaction Manager","model_client_interaction","base.group_user",1,1,1,1
+"access_opportunity_manager","Access Opportunity Manager","model_client_opportunity","base.group_user",1,1,1,1
+"access_service_manager","Access Service Manager","model_client_service","base.group_user",1,1,1,1
+
+

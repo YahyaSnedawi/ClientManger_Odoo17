@@ -1,0 +1,19 @@
+<odoo>
+    <record id="action_opportunity_list" model="ir.actions.act_window">
+        <field name="name">Sales Opportunities</field>
+        <field name="res_model">client.opportunity</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first sales opportunity
+            </p>
+        </field>
+    </record>
+
+   
+    <menuitem id="menu_opportunity_root"
+              parent="client_manager_root"
+              name="Opportunities"
+              action="action_opportunity_list"
+              sequence="30"/>
+</odoo>

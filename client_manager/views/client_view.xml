@@ -1,0 +1,89 @@
+<odoo>
+    <!-- Form View for Client -->
+    <record id="view_client_form" model="ir.ui.view">
+        <field name="name">client.client.form</field>
+        <field name="model">client.client</field>
+        <field name="arch" type="xml">
+            <form string="Client">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="company"/>
+                        <field name="status"/>
+                        <field name="client_type"/> 
+                        <field name="notes"/>
+                        <field name="create_date" readonly="1"/>
+                    </group>
+
+                    <notebook>
+                        <!-- Interactions Tab -->
+                        <page string="Interactions">
+                            <field name="interaction_ids">
+                                <tree editable="bottom">
+                                    <field name="date"/>
+                                    <field name="interaction_type"/>
+                                    <field name="note"/>
+                                    <field name="user_id"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Opportunities Tab -->
+                        <page string="Opportunities">
+                            <field name="opportunity_ids">
+                                <tree editable="bottom">
+                                    <field name="opportunity_name"/>
+                                    <field name="expected_value"/>
+                                    <field name="stage"/>
+                                    <field name="follow_up_date"/>
+                                </tree>
+                            </field>
+                        </page>
+
+                        <!-- Services Tab -->
+                        <page string="Services">
+                            <field name="service_ids">
+                                <tree editable="bottom">
+                                    <field name="name"/>
+                                    <field name="price"/>
+                                    <field name="description"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View for Client -->
+    <record id="view_client_tree" model="ir.ui.view">
+        <field name="name">client.client.tree</field>
+        <field name="model">client.client</field>
+        <field name="arch" type="xml">
+            <tree string="Clients">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="company"/>
+                <field name="status"/>
+                <field name="client_type"/> 
+            </tree>
+        </field>
+    </record>
+<record id="action_client_tree" model="ir.actions.act_window">
+    <field name="name">Clients</field>
+    <field name="res_model">client.client</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="client_manager_root" name="Client Manager" sequence="10"/>
+
+<menuitem id="menu_clients" name="Clients"
+          parent="client_manager_root"
+          action="action_client_tree"
+          sequence="1"/>
+
+</odoo>

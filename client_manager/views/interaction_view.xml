@@ -1,0 +1,45 @@
+<odoo>
+    <!-- Form View for Interaction -->
+    <record id="view_interaction_form" model="ir.ui.view">
+        <field name="name">client.interaction.form</field>
+        <field name="model">client.interaction</field>
+        <field name="arch" type="xml">
+            <form string="Interaction">
+                <sheet>
+                    <group>
+                        <field name="client_id"/>
+                        <field name="date"/>
+                        <field name="interaction_type"/>
+                        <field name="note"/>
+                        <field name="user_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree View for Interaction -->
+    <record id="view_interaction_tree" model="ir.ui.view">
+        <field name="name">client.interaction.tree</field>
+        <field name="model">client.interaction</field>
+        <field name="arch" type="xml">
+            <tree string="Interactions">
+                <field name="client_id"/>
+                <field name="date"/>
+                <field name="interaction_type"/>
+                <field name="note"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_interaction_tree" model="ir.actions.act_window">
+    <field name="name">Interactions</field>
+    <field name="res_model">client.interaction</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem id="menu_interactions" name="Interactions"
+          parent="client_manager_root"
+          action="action_interaction_tree"
+          sequence="2"/>
+</odoo>
